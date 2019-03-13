@@ -11,8 +11,6 @@ def removeDuplicate(row, output_file) :
     with open(output_file, 'ab') as f:
             writer = csv.writer(f)
             writer.writerow(new_list)
-    f.close()
-    
 
 parser = argparse.ArgumentParser("coliminator.py")
 parser.add_argument("input_file", help="The input CSV file to eliminate columns from.", type=str)
@@ -26,4 +24,3 @@ with open(args.input_file, 'rb') as csvDataFile:
             removeDuplicate(row, args.output_file)
 
 print("Duplicates removed and written to: " + args.output_file)
-csvDataFile.close()
